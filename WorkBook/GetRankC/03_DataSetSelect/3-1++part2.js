@@ -15,7 +15,7 @@ reader.on("close", () => {
   const targetNumbers = lines[1].split(" ").map(Number);
 
   const frequency = targetNumbers.reduce((acc, num) => {
-    acc[num] = (acc[num] || 0) + 1;
+    acc[num] = (acc[num] || 0) + 1; // undefinedの時は0を指定
     return acc; //reduceでループ処理をするために最新のaccをreturnで返している。reduceは targetNumbers.length の数だけ繰り返す。
   }, Array(10).fill(0));
 
