@@ -1,15 +1,18 @@
 process.stdin.resume();
 process.stdin.setEncoding("utf8");
-// 自分の得意な言語で
-// Let's チャレンジ！！
-var lines = [];
-var reader = require("readline").createInterface({
+
+const readline = require("readline");
+const reader = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
+
+const lines = [];
+
 reader.on("line", (line) => {
   lines.push(line);
 });
+
 reader.on("close", () => {
   const [numString, numQuery] = lines[0].split(" ").map(Number);
   const stringList = lines.slice(1, numString + 1);
